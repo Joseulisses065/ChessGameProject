@@ -2,12 +2,16 @@ package br.com.chessGameProject.chess;
 
 import br.com.chessGameProject.bordergame.Board;
 import br.com.chessGameProject.bordergame.Piece;
+import br.com.chessGameProject.bordergame.Position;
+import br.com.chessGameProject.chess.pieces.King;
+import br.com.chessGameProject.chess.pieces.Rook;
 
 public class ChessMatch {
     private Board board;
 
     public ChessMatch() {
         board = new Board(8,8);
+        initialSetup();
     }
 
     public ChessPiece[][] getPicies(){
@@ -18,5 +22,12 @@ public class ChessMatch {
             }
         }
         return mat;
+    }
+
+    private void initialSetup(){
+        board.placePice(new Rook(board,Color.WHITE),new Position(0,0));
+        board.placePice(new King(board,Color.BLACK),new Position(0,4));
+        board.placePice(new King(board,Color.WHITE),new Position(7,4));
+
     }
 }
