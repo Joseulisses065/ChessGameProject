@@ -2,9 +2,11 @@ package br.com.chessGameProject.aplication;
 
 import br.com.chessGameProject.bordergame.Board;
 import br.com.chessGameProject.bordergame.Position;
+import br.com.chessGameProject.chess.ChessMatch;
 
 public class Main {
     public static void main(String[] args) {
-        Board bord = new Board(8,8);
+        ChessMatch chessMatch = new ChessMatch();
+        UI.printBoard(chessMatch.getPicies());
     }
 }
