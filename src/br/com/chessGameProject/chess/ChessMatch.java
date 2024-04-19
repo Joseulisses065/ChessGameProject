@@ -26,6 +26,29 @@ public class ChessMatch {
     private void placeNewPiece(char column, int row, ChessPiece piece){
         board.placePice(piece, new ChessPosition(column,row).toPosition());
     }
+
+    public ChessPiece performChessMove(ChessPosition sourcePosition, ChessPosition targetPosition){
+        Position source = sourcePosition.toPosition();
+        Position target = targetPosition.toPosition();
+        validateSourcePosition(source);
+        Piece capturedPiece = makeMove(source,target);
+        return  (ChessPiece) capturedPiece;
+
+    }
+
+    private void validateSourcePosition(Position position){
+        if(!board.therelsAPiece(position)){
+            throw new ChessException("Error is not exist piece in this position");
+        }
+    }
+
+
+    private Piece makeMove(Position source, Position target){
+        Piece p = board.removePiece(source);
+        Piece capturedPiece = board.removePiece(target);
+        board.placePice(p,target);
+        return capturedPiece;
+    }
     private void initialSetup(){
         placeNewPiece('c', 2, new Rook(board, Color.WHITE));
         placeNewPiece('d', 2, new Rook(board, Color.WHITE));
