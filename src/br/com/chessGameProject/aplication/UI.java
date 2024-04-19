@@ -93,7 +93,7 @@ public class UI {
         printCapturedPieces(captured);
         System.out.println("Turn : "+chessMatch.getTurn());
         System.out.println("Waiting player:"+chessMatch.getCurrentPlColor());
-
+        System.out.println(chessMatch.isCheck()?"CHECK!":"");
     }
 
     public static void printCapturedPieces(List<ChessPiece> captured){
