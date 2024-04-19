@@ -7,6 +7,7 @@ import br.com.chessGameProject.bordergame.Position;
 public abstract class ChessPiece extends Piece {
 
     private Color color;
+    private int moveCount;
 
     public ChessPiece(Board board, Color color) {
         super(board);
@@ -25,6 +26,14 @@ public ChessPosition getChessPosition(){
         ChessPiece p = (ChessPiece)getBoard().piece(position);
         return p != null && p.getColor() != color;
     }
+    protected void incriseMoveCount(){
+        moveCount++;
+    }
+    protected void decriseMoveCount(){
+        moveCount--;
+    }
 
-
+    public int getMoveCount() {
+        return moveCount;
+    }
 }
