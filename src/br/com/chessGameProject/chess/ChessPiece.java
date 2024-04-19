@@ -3,11 +3,11 @@ package br.com.chessGameProject.chess;
 import br.com.chessGameProject.bordergame.Board;
 import br.com.chessGameProject.bordergame.Piece;
 
-public class ChessPiece extends Piece {
+public abstract class ChessPiece extends Piece {
 
     private Color color;
 
-    public ChessPiece(Board board, Color color) {
+    public  ChessPiece(Board board, Color color) {
         super(board);
         this.color = color;
     }
@@ -15,5 +15,6 @@ public class ChessPiece extends Piece {
     public Color getColor() {
         return color;
     }
+
 
 }

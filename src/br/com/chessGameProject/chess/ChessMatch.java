@@ -40,6 +40,9 @@ public class ChessMatch {
         if(!board.therelsAPiece(position)){
             throw new ChessException("Error is not exist piece in this position");
         }
+        if (!board.piece(position).idThereAnyPossibleMove()) {
+            throw  new ChessException("Error in no possible moviments for this piece");
+        }
     }
 
 
