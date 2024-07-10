@@ -1,4 +1,4 @@
-# Notas Vue
+# Chess Game project
 Projeto desenvolvido durante o curso de java completo do professor Nelio Alves, a aplicação de um jogo de xadrez desenvolvido em Java. 
 
 
